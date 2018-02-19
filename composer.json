@@ -9,6 +9,8 @@
             "email": "hermes.sergio@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "stable",
+    "require": {
+        "api-skeletons/zf-oauth2-doctrine": "^2.0"
+    }
 }
