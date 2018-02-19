@@ -23,4 +23,8 @@ data/DoctrineORMModule/cache/
 # Legacy ZF1
 demos/
 extras/documentation
+
+# Private Custom
+
 php_errors.log
+composer.lock
