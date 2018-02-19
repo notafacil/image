@@ -19,7 +19,7 @@
     },
     "autoload" : {
       "psr-4": {
-        "NotafacilAPI\\Image\\": "src/NotafacilAPI/Image"
+        "Notafacil\\Image\\": "src/Notafacil/Image"
       }
     },
     "require-dev": {

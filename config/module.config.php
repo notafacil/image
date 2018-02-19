@@ -7,7 +7,7 @@ return [
                 'options' => [
                     'route' => '/v1.0/image[/:image_id]',
                     'defaults' => [
-                        'controller' => 'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller',
+                        'controller' => 'Notafacil\\Image\\V1\\Rest\\Image\\Controller',
                     ],
                 ],
             ],
@@ -16,7 +16,7 @@ return [
                 'options' => [
                     'route' => '/v1.0/images',
                     'defaults' => [
-                        'controller' => 'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller',
+                        'controller' => 'Notafacil\\Image\\V1\\Rest\\Images\\Controller',
                     ],
                 ],
             ],
@@ -24,32 +24,32 @@ return [
     ],
     'hydrators' => [
         'factories' => [
-            'NotafacilAPI\\Image\\Entity\\Hydrator' => 'NotafacilAPI\\Image\\Service\\Factory\DoctrineObjectHydratorFactory',
+            'Notafacil\\Image\\Entity\\Hydrator' => 'Notafacil\\Image\\Service\\Factory\DoctrineObjectHydratorFactory',
         ],
         'shared' => [
-            'NotafacilAPI\\Image\\Entity\\Hydrator' => true
+            'Notafacil\\Image\\Entity\\Hydrator' => true
         ]
     ],
     'service_manager' => [
         'invokables' => [
-            'NotafacilAPI\\Image\\Mapper\\Image'  => 'NotafacilAPI\\Image\\Mapper\\Adapter\\DoctrineORMImage',
-            'NotafacilAPI\\Image\\Mapper\\User'   => 'NotafacilAPI\\Image\\Mapper\\Adapter\\DoctrineORMUser',
-            'NotafacilAPI\\Image\\Service\\Image' => 'NotafacilAPI\\Image\\Service\\Image',
-            'NotafacilAPI\\Image\\SharedEventListener' => 'NotafacilAPI\\Image\\Service\\SharedEventListener',
-            'NotafacilAPI\\Image\\Authorization\\AclImageListener'    =>
-                'NotafacilAPI\\Image\\Authorization\\AclImageListener',
-            'NotafacilAPI\\Image\\Authorization\\AclScopeListener' =>
-                'NotafacilAPI\\Image\\Authorization\\AclScopeListener',
-            'NotafacilAPI\\Image\\V1\\Rest\\Image\\ImageResource'   =>
-                'NotafacilAPI\\Image\\V1\\Rest\\Image\\ImageResource',
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesResource' =>
-                'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesResource',
-            'NotafacilAPI\\Image\\Stdlib\\Hydrator\\Strategy\\AssetManagerResolverStrategy' =>
-                'NotafacilAPI\\Image\\Stdlib\\Hydrator\\Strategy\\AssetManagerResolverStrategy'
+            'Notafacil\\Image\\Mapper\\Image'  => 'Notafacil\\Image\\Mapper\\Adapter\\DoctrineORMImage',
+            'Notafacil\\Image\\Mapper\\User'   => 'Notafacil\\Image\\Mapper\\Adapter\\DoctrineORMUser',
+            'Notafacil\\Image\\Service\\Image' => 'Notafacil\\Image\\Service\\Image',
+            'Notafacil\\Image\\SharedEventListener' => 'Notafacil\\Image\\Service\\SharedEventListener',
+            'Notafacil\\Image\\Authorization\\AclImageListener'    =>
+                'Notafacil\\Image\\Authorization\\AclImageListener',
+            'Notafacil\\Image\\Authorization\\AclScopeListener' =>
+                'Notafacil\\Image\\Authorization\\AclScopeListener',
+            'Notafacil\\Image\\V1\\Rest\\Image\\ImageResource'   =>
+                'Notafacil\\Image\\V1\\Rest\\Image\\ImageResource',
+            'Notafacil\\Image\\V1\\Rest\\Images\\ImagesResource' =>
+                'Notafacil\\Image\\V1\\Rest\\Images\\ImagesResource',
+            'Notafacil\\Image\\Stdlib\\Hydrator\\Strategy\\AssetManagerResolverStrategy' =>
+                'Notafacil\\Image\\Stdlib\\Hydrator\\Strategy\\AssetManagerResolverStrategy'
         ],
         'factories' => [
-            'image.authenticated.user' => 'NotafacilAPI\\Image\\Service\\Factory\\AuthUserFactory',
-            'image.requested.image'    => 'NotafacilAPI\\Image\\Service\\Factory\\RequestedImageFactory'
+            'image.authenticated.user' => 'Notafacil\\Image\\Service\\Factory\\AuthUserFactory',
+            'image.requested.image'    => 'Notafacil\\Image\\Service\\Factory\\RequestedImageFactory'
         ],
         'aliases' => [
             'ZF\OAuth2\Provider\UserId' => 'ZF\OAuth2\Provider\UserId\AuthenticationService',
@@ -62,8 +62,8 @@ return [
         ],
     ],
     'zf-rest' => [
-        'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => [
-            'listener' => 'NotafacilAPI\\Image\\V1\\Rest\\Image\\ImageResource',
+        'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => [
+            'listener' => 'Notafacil\\Image\\V1\\Rest\\Image\\ImageResource',
             'route_name' => 'image.rest.image',
             'route_identifier_name' => 'image_id',
             'collection_name' => 'image',
@@ -78,12 +78,12 @@ return [
             'collection_query_whitelist' => [],
             'page_size' => 25,
             'page_size_param' => null,
-            'entity_class' => 'NotafacilAPI\\Image\\Entity\\Image',
-            'collection_class' => 'NotafacilAPI\\Image\\V1\\Rest\\Image\\ImageCollection',
-            'service_name' => 'NotafacilAPI\\Image',
+            'entity_class' => 'Notafacil\\Image\\Entity\\Image',
+            'collection_class' => 'Notafacil\\Image\\V1\\Rest\\Image\\ImageCollection',
+            'service_name' => 'Notafacil\\Image',
         ],
-        'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller' => [
-            'listener' => 'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesResource',
+        'Notafacil\\Image\\V1\\Rest\\Images\\Controller' => [
+            'listener' => 'Notafacil\\Image\\V1\\Rest\\Images\\ImagesResource',
             'route_name' => 'image.rest.images',
             'route_identifier_name' => 'images_id',
             'collection_name' => 'images',
@@ -96,30 +96,30 @@ return [
             ],
             'page_size' => 5,
             'page_size_param' => null,
-            'entity_class' => 'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesEntity',
-            'collection_class' => 'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesCollection',
-            'service_name' => 'NotafacilAPI\\Images',
+            'entity_class' => 'Notafacil\\Image\\V1\\Rest\\Images\\ImagesEntity',
+            'collection_class' => 'Notafacil\\Image\\V1\\Rest\\Images\\ImagesCollection',
+            'service_name' => 'Notafacil\\Images',
         ],
     ],
     'zf-content-negotiation' => [
         'controllers' => [
-            'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => 'HalJson',
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller' => 'HalJson',
+            'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => 'HalJson',
+            'Notafacil\\Image\\V1\\Rest\\Images\\Controller' => 'HalJson',
         ],
         'accept_whitelist' => [
-            'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => [
                 0 => 'application/vnd.image.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ],
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Images\\Controller' => [
                 0 => 'application/vnd.image.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ],
         ],
         'content_type_whitelist' => [
-            'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => [
                 0 => 'application/vnd.image.v1+json',
                 1 => 'application/json',
                 2 => 'multipart/form-data',
@@ -127,7 +127,7 @@ return [
                 4 => 'image/png',
                 5 => 'image/jpg',
             ],
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Images\\Controller' => [
                 0 => 'application/vnd.image.v1+json',
                 1 => 'application/json',
             ],
@@ -135,13 +135,13 @@ return [
     ],
     'zf-hal' => [
         'metadata_map' => [
-            'NotafacilAPI\\Image\\Entity\\Image' => [
+            'Notafacil\\Image\\Entity\\Image' => [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'image.rest.image',
                 'route_identifier_name' => 'image_id',
-                'hydrator' => 'NotafacilAPI\\Image\\Entity\\Hydrator',
+                'hydrator' => 'Notafacil\\Image\\Entity\\Hydrator',
             ],
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\ImagesCollection' => [
+            'Notafacil\\Image\\V1\\Rest\\Images\\ImagesCollection' => [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'image.rest.images',
                 'route_identifier_name' => 'images_id',
@@ -150,13 +150,13 @@ return [
         ],
     ],
     'zf-content-validation' => [
-        'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => [
-            'input_filter' => 'NotafacilAPI\\Image\\V1\\Rest\\Image\\Validator',
+        'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => [
+            'input_filter' => 'Notafacil\\Image\\V1\\Rest\\Image\\Validator',
         ],
     ],
     'zf-mvc-auth' => [
         'authorization' => [
-            'NotafacilAPI\\Image\\V1\\Rest\\Image\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Image\\Controller' => [
                 'entity' => [
                     'GET' => true,
                     'PATCH' => true,
@@ -166,7 +166,7 @@ return [
                     'POST' => true,
                 ]
             ],
-            'NotafacilAPI\\Image\\V1\\Rest\\Images\\Controller' => [
+            'Notafacil\\Image\\V1\\Rest\\Images\\Controller' => [
                 'collection' => [
                     'GET' => true,
                 ],
@@ -174,7 +174,7 @@ return [
         ],
     ],
     'input_filter_specs' => [
-        'NotafacilAPI\\Image\\V1\\Rest\\Image\\Validator' => [
+        'Notafacil\\Image\\V1\\Rest\\Image\\Validator' => [
             0 => [
                 'required' => true,
                 'validators' => [
@@ -200,7 +200,7 @@ return [
                     ],
                 ],
                 'name' => 'description',
-                'description' => 'NotafacilAPI\\Image Description',
+                'description' => 'Notafacil\\Image Description',
                 'error_message' => 'A descrição deve ser preenchida',
             ],
             1 => [
@@ -216,7 +216,7 @@ return [
                 ],
                 'filters' => [],
                 'name' => 'image',
-                'description' => 'NotafacilAPI\\Image File',
+                'description' => 'Notafacil\\Image File',
                 'type' => 'Zend\\InputFilter\\FileInput',
                 'error_message' => 'O arquivo deve ser carregado',
             ],
@@ -233,13 +233,13 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'NotafacilAPI\\Image\\Entity' => 'image_db_driver',
+                    'Notafacil\\Image\\Entity' => 'image_db_driver',
                 ],
             ],
         ],
     ],
     'data-fixture' => [
-        'fixtures' => __DIR__ . '/../src/NotafacilAPI/Image/Fixture'
+        'fixtures' => __DIR__ . '/../src/Notafacil/Image/Fixture'
     ],
     'asset_manager' => [
         'resolver_configs' => [
@@ -257,15 +257,15 @@ return [
     'authorization' => [
         'scopes' => [
             'post' => [
-                // 'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::collection',
+                // 'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::collection',
                 // 'method' => 'POST',
             ],
             'update' => [
-                // 'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::entity',
+                // 'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::entity',
                 // 'method' => 'PATCH',
             ],
             'delete' => [
-                // 'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::entity',
+                // 'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::entity',
                 // 'method' => 'DELETE',
             ]
         ]

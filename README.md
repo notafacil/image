@@ -45,7 +45,7 @@ return array(
        .
        .
        .
-       'NotafacilAPI\\Image',
+       'Notafacil\\Image',
        'ZF\\OAuth2\\Doctrine',
        'DoctrineDataFixtureModule'
     )
@@ -106,15 +106,15 @@ We also able to configure `authorization` based on `Scope`. Currently ACL by `Sc
     'authorization' => array(
         'scopes' => array(
             'post' => array(
-                'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::collection',
+                'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::collection',
                 'method' => 'POST',
             ),
             'update' => array(
-                'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::entity',
+                'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::entity',
                 'method' => 'PATCH',
             ),
             'delete' => array(
-                'resource' => 'NotafacilAPI\Image\V1\Rest\Image\Controller::entity',
+                'resource' => 'Notafacil\Image\V1\Rest\Image\Controller::entity',
                 'method' => 'DELETE',
             )
         )
