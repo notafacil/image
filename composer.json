@@ -3,6 +3,7 @@
     "description": "API to consume resources for apigility project as statics image and files management",
     "type": "project",
     "license": "MIT",
+    "keywords" : [ "framework", "zf3", "api", "apigility", "image" ],
     "authors": [
         {
             "name": "Sérgio Ernane Munhós Hermes",
@@ -13,11 +14,15 @@
     "require": {
         "api-skeletons/zf-oauth2-doctrine": "^2.0",
         "api-skeletons/zf-oauth2-doctrine-permissions-acl": "^2.0",
-        "bushbaby/zf-oauth2-doctrine-mutatetablenames": "^0.5.0"
+        "bushbaby/zf-oauth2-doctrine-mutatetablenames": "^0.5.0",
+        "doctrine/data-fixtures": "^1.3"
     },
     "autoload" : {
       "psr-4": {
         "NotafacilAPI\\Image\\": "src/NotafacilAPI/Image"
       }
+    },
+    "require-dev": {
+        "zfcampus/zf-apigility": "^1.3"
     }
 }
