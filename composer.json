@@ -13,7 +13,7 @@
     "require": {
         "api-skeletons/zf-oauth2-doctrine": "^2.0",
         "api-skeletons/zf-oauth2-doctrine-permissions-acl": "^2.0",
-        "bushbaby/zf-oauth2-doctrine-mutatetablenames": "dev-master"
+        "bushbaby/zf-oauth2-doctrine-mutatetablenames": "^0.5.0"
     },
     "autoload" : {
       "psr-4": {
