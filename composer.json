@@ -12,5 +12,10 @@
     "minimum-stability": "stable",
     "require": {
         "api-skeletons/zf-oauth2-doctrine": "^2.0"
+    },
+    "autoload" : {
+      "psr-4": {
+        "NotafacilAPI\\Image\\": "src/NotafacilAPI/Image"
+      }
     }
 }
