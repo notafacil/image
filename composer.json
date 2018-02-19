@@ -1,0 +1,14 @@
+{
+    "name": "notafacil/image",
+    "description": "API to consume resources for apigility project as statics image and files management",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sérgio Ernane Munhós Hermes",
+            "email": "hermes.sergio@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
